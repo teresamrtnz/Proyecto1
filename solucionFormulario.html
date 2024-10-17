@@ -1,0 +1,118 @@
+<html>
+	<head>		
+		<title>Hoja de inscripción Ciclos Formativos de Grado Superior. </title>
+		<meta charset="utf-8">
+	</head>
+	<body>		
+		<form action="">
+			<table>				
+				<caption><h1>Hoja de inscripción<br>en los ciclos formativos de grado superior</h1></caption>				
+				<tr>
+					<!--Se puede usar label en todos los títulos de los campos -->
+					<!-- El size es el tamaño en caracteres del input, no de lo que escribes dentro del input -->
+					<td>
+						<label for="apellidos">Apellidos*</label><br>
+						<input type="text" size="40" name="apellidos" required>
+					</td>
+					<td>
+						<label for="nombre">Nombre*</label><br>
+						<input type="text" size="20" name="nombre" required>
+					</td>
+					<td>
+						<label for="dni">DNI: (número de caracteres máximo 9)</label><br>
+						<input type="text" size="12" maxlength="9" name="dni">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="nacimiento">Lugar de nacimiento: (Lista de comunidades autónomas)</label><br>
+						<input list="nacimiento" name="nacimiento">
+						<datalist id="nacimiento">
+						  <option value="Aragon">
+						  <option value="Madrid">
+						  <option value="Cataluña">
+						  <option value="Comunidad Valenciana">
+						  <option value="Navarra">
+						  <option value="Andalucía">
+						  <option value="Castilla La Mancha">
+						  <option value="Castilla León">
+						  <option value="Galicia">
+						</datalist>
+					</td>
+					<td>
+						<label for="provinciaNacimiento">Provincia Nacimiento: (Zaragoza, Huesca, Teruel)</label><br>
+						<select name="provinciaNacimiento">
+							<option value="Zaragoza">Zaragoza</option>
+							<option value="Huesca">Huesca</option>
+							<option value="Teruel">Teruel</option>							
+						</select>
+					</td>
+					<td>
+						<label for="fechaNacimiento">Fecha nacimiento (dd/mm/aaaa): Fecha anterior a 31/12/2010</label>
+						<input type="date" max="2010-12-31" name="fechaNacimiento">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<label for="domicilio">Domicilio (Calle, plaza y número):</label><br>
+						<input type="text" size="60">
+					</td>
+					<!--Añade validación de mínimo y máximo -->
+					<td>
+						<label for="cp">Código Postal:</label><br>
+						<input type="number" size="6" min="01000" max="50999" name="cp">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="localidad">Localidad:</label><br>
+						<input type="text" size="30">
+					</td>
+					<td>
+						<label for="provincia">Provincia:</label><br>
+						<select multiple>
+							<option value="Zaragoza">Zaragoza</option>
+							<option value="Huesca">Huesca</option>
+							<option value="Teruel">Teruel</option>
+							<option value="Otros">Otros</option>
+						</select>
+					</td>
+					<td>
+						<label for="telefono">Teléfono</label><br>
+						<input type="tel" placeholder="123-45-67-89" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<fieldset>
+							<legend>Documentación presentada </legend>
+							<input type="checkbox" name="fotocopiaDNI" value="DNI" checked>
+							<label for="fotocopiaDNI">Fotocopia DNI</label> <br>
+							<input type="checkbox" name="certificado" value="Certificado"> 
+							<label for="certificado">Certificado académico</label><br>
+							<input type="checkbox" name="foto" value="Fotografia"> 
+							<label for="foto">Fotografía</label><br>
+						</fieldset>
+					</td>
+					<td>
+						<label for="acceso">Tipo de acceso </label><br>
+						<!-- Si queremos que solo seleccione 1 debemos tener el mismo name en todas las opciones -->
+						<input type="radio" id="directo" name="acceso" value="directo" checked>
+						<label for="directo">directo </label><br>
+						<input type="radio" id="prueba" name="acceso" value="prueba" >
+						<label for="prueba">Mediante prueba </label><br>
+					</td>					
+				</tr>
+				<tr>
+					<td>
+					</td>
+					<td>
+						<input type="submit">					
+					</td>
+					<td>
+					</td>
+				</tr>				
+			</table>						
+		</form>        
+	</body>
+</html>
